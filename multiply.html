@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAA WEB PAGE</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+
+<body id="bg">
+    
+    <div id="d1">
+           <strong>MULTIPLICATION OF LARGE INTEGERS</strong>
+    </div>
+    <div id="d2">
+        <p id="ic">&#127775;</p>
+        <p id="p1"><strong><u>ALGORITHM TECHNIQUE USED:</u></strong></p>
+        <p id="p2">Divide and Conquer</p>
+        <p id="p3">
+            Divide: This involves dividing the problem into smaller sub-problems. <br />
+            Conquer: Solve sub-problems by calling recursively until solved.
+        </p>
+    </div>
+
+    <div id="d3">
+        <p id="p4"><strong><u>ALGORITHM:</u></strong></p>
+        <pre id="pr1">
+Algorithm: MultiplicationOfLargeIntegers(A,B)
+//Description: Perform multiplication of large numbers using 
+divide and conquer strategy.
+//Input: Number A and B, where A = an-1...a1aO, B = bn-1...b1bO
+//Output: Multiplication of A and B as C, ie. C = A*B
+
+if |a|== 1 or |b|== 1 then 
+        return A * B
+else
+        n&larr;max(|A|,|B|)
+        // returns maximum number
+        digits c2 &larr; MultiplicationOfLargeIntegers(a1, b1) 
+        cO &larr; MultiplicationOfLargeIntegers(aO,bO)
+        x &larr; MultiplicationOfLargeIntegers(a1,bO)
+        y &larr; MultiplicationOfLargeIntegers(aO,b1)
+        c1 &larr; x+y 
+        return c2*10n + c1*10n/2 + cO
+end
+</pre>
+    </div>
+
+    <div id="d4">
+          <p id="p5"><strong><u>EXAMPLE</u></strong></p>
+          <pre id="pr2">
+            Consider: 42 X 34
+
+           a1=4,aO=2,b1=3,bO=4
+
+            Obtaining cO,c1,c2
+
+           c2 = a1*b1 = 4*3 = 12
+
+           cO = aO*bO = 2*4 = 8
+
+         c1 = (a1*aO)*(b1*bO)-(c2+cO) 
+              = (4+2)+(3+4)-(12+8) 
+                = 22
+
+         A*B = c2(10^2)+c1(10^1)+cO
+               = 12*100+22*10+8
+                 = 1200+220+8
+                   = 1428
+          </pre>
+    </div>
+
+    <div id="d5">
+        <p id="p6"><strong><u>TIME COMPLEXITY</u></strong></p> 
+        <p id="p7"><strong>O (n^2)</strong></p>
+    </div>
+
+</body>
+
+</html>
